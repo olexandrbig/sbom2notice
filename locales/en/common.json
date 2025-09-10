@@ -1,0 +1,270 @@
+{
+  "app": {
+    "name": "SBOM to NOTICE",
+    "tagline": "Make NOTICE files fast from your SBOM"
+  },
+  "aria": {
+    "landing": "Landing"
+  },
+  "nav": {
+    "notice": "Notice Files",
+    "home": "Home",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "imprint": "Imprint",
+    "language": "Language",
+    "legalImprint": "Legal / Imprint"
+  },
+  "landing": {
+    "headline": "Turn your SBOM into a NOTICE file",
+    "subline": "Runs in your browser. No uploads. Safe for GDPR.",
+    "features": {
+      "import": "Open CycloneDX or SPDX (JSON)",
+      "editable": "Edit the NOTICE draft with a simple form",
+      "nocookies": "No cookies. No tracking. No extra tools."
+    },
+    "cta": {
+      "upload": "Upload SBOM",
+      "privacyByDesign": "See Privacy Info"
+    },
+    "note": "Drafts are saved only in your browser. Nothing is sent anywhere.",
+    "whyTitle": "Why this tool?",
+    "whyText": "Convert your SBOM into a structured NOTICE skeleton and complete missing fields safely in the browser.",
+    "cards": {
+      "security": {
+        "title": "Security",
+        "text": "Runs offline, no uploads, CSP-friendly."
+      },
+      "compliance": {
+        "title": "Compliance"
+      },
+      "formats": {
+        "title": "Formats",
+        "text": "SPDX / CycloneDX (JSON), NOTICE export."
+      },
+      "editing": {
+        "title": "Editing",
+        "text": "Form Builder, autosave drafts, live preview."
+      }
+    }
+  },
+  "pages": {
+    "privacy": {
+      "title": "Privacy Policy",
+      "intro": "Everything stays on your computer. We don’t upload or store your SBOM or NOTICE files.",
+      "nocookies": "There are no cookies, no tracing or tracking. You are just private",
+      "questions": "Questions?",
+      "contact": "Contact us"
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "intro": "This tool is free and comes without any warranty. Licensed under AGPL 3.0.",
+      "usage": "It helps you create NOTICE files from SBOM data. You are responsible for the results.",
+      "changes": "We may update these terms. New versions will appear here."
+    },
+    "imprint": {
+      "title": "Imprint",
+      "operator": "Tool developer:",
+      "company": "EACG Operation Services GmbH",
+      "address": "Taunustor 1, 60310 Frankfurt am Main, Germany",
+      "support": "Support: ",
+      "kb": "Knowledge base",
+      "contact": "Contact",
+      "security": "Security:",
+      "policy": "Policy"
+    }
+  },
+  "lang": {
+    "enLong": "EN — English",
+    "deLong": "DE — Deutsch"
+  },
+  "branding": {
+    "logoAlt": "TrustSource"
+  },
+  "actions": {
+    "export": {
+      "label": "Export",
+      "menuAria": "Export menu",
+      "json": "JSON",
+      "csv": "CSV",
+      "markdown": "Markdown"
+    }
+  },
+  "components": {
+    "consentBanner": {
+      "message": "We only use cookies that are necessary for the application to work. Allow anonymous analytics?",
+      "reject": "Reject",
+      "allow": "Allow"
+    },
+    "arrayField": {
+      "removeItem": "Remove item",
+      "remove": "Remove",
+      "addItem": "Add item"
+    },
+    "componentEditor": {
+      "component": "Component",
+      "componentWithIndex": "Component #{{index}}",
+      "remove": "Remove",
+      "fields": {
+        "name": "Name",
+        "version": "Version",
+        "purl": "PURL",
+        "homepage": "Homepage",
+        "copyrights": "Copyrights",
+        "sources": "Sources",
+        "modifiedSources": "ModifiedSources",
+        "modifications": "Modifications (short notes)",
+        "modificationsText": "ModificationsText"
+      },
+      "placeholders": {
+        "name": "package-name",
+        "version": "1.2.3",
+        "purl": "pkg:npm/name@1.0.0",
+        "homepage": "https://example.com",
+        "copyright": "(c) 2024 Example Authors",
+        "source": "https://repo/url",
+        "modifiedSource": "https://patch/url",
+        "modification": "applied security fix ...",
+        "modificationsText": "Detailed description of modifications..."
+      }
+    },
+    "footer": {
+      "aria": {
+        "github": "GitHub",
+        "linkedin": "LinkedIn",
+        "email": "Email"
+      },
+      "copyright": "© {{year}} {{name}}. All rights reserved."
+    },
+    "uploadSbom": {
+      "title": "Upload SBOM (CycloneDX/SPDX JSON)",
+      "subtitle": "Drag & drop your file here or use the button.",
+      "dropAria": "Drop SBOM file here",
+      "chooseAria": "Choose SBOM file",
+      "button": "Upload SBOM",
+      "errors": {
+        "tooLarge": "File is too large. Max {{maxMB}} MB.",
+        "invalidJson": "File is not valid JSON.",
+        "unexpected": "Unexpected error while reading the file.",
+        "invalidType": "Unsupported file type. Please upload CycloneDX/SPDX JSON.",
+        "rejectGeneric": "Could not accept the file. Please try another SBOM JSON."
+      }
+    },
+    "noticeViewer": {
+      "missing": {
+        "title": "Notice not found",
+        "descBeforeId": "We couldn’t find a notice with id",
+        "descAfterId": "in your browser storage. It may have been cleared.",
+        "goHome": "Go Home"
+      },
+      "header": {
+        "titleFallback": "NOTICE JSON",
+        "subtitle": "Local draft · Completed {{percent}}%",
+        "sourceSuffix": " · {{fileName}}"
+      },
+      "buttons": {
+        "download": {
+          "aria": "Download JSON",
+          "idle": "Download JSON",
+          "done": "Saved"
+        },
+        "copy": {
+          "aria": "Copy JSON",
+          "idle": "Copy to clipboard",
+          "done": "Copied"
+        }
+      }
+    },
+    "noticeList": {
+      "header": {
+        "title": "Your local NOTICE drafts"
+      },
+      "empty": {
+        "title": "No local notices yet",
+        "hint": "Upload an SBOM here to create your first NOTICE draft."
+      },
+      "table": {
+        "name": "Name",
+        "id": "ID",
+        "completed": "Completed",
+        "licenses": "Licenses",
+        "actions": "Actions"
+      },
+      "row": {
+        "untitled": "(untitled)",
+        "completedCell": "{{percent}}% ({{count}} components)"
+      },
+      "buttons": {
+        "open": "Open",
+        "download": "Download",
+        "delete": "Delete"
+      },
+      "confirmDelete": "Delete this local notice? This cannot be undone.",
+      "alerts": {
+        "convertFailed": "Failed to convert SBOM to NOTICE. See console for details."
+      }
+    },
+    "noticeEditor": {
+      "header": { "titleFallback": "NOTICE" },
+      "buttons": {
+        "save": { "aria": "Save", "idle": "Save", "done": "Saved" }
+      },
+      "controls": {
+        "collapseAll": "Collapse all",
+        "openAll": "Open all"
+      },
+      "doc": {
+        "sectionTitle": "Document",
+        "fields": {
+          "name": "Name",
+          "versionSchema": "Version (schema)",
+          "writtenOffer": "Written offer"
+        },
+        "placeholders": {
+          "name": "My-project NOTICE",
+          "version": "1.0.0",
+          "writtenOffer": "(Optional) Offer to provide source code..."
+        },
+        "completedDerivedLabel": "Completed (derived):"
+      },
+      "licenses": {
+        "title": "Licenses",
+        "add": "Add license",
+        "paramsTitle": "License params",
+        "status": { "complete": "Complete", "incomplete": "Incomplete" }
+      },
+      "components": {
+        "label": "Component:",
+        "unnamed": "(unnamed)"
+      },
+      "aside": {
+        "progressTitle": "Progress",
+        "componentsComplete": "components complete",
+        "licensesComplete": "licenses complete",
+        "navigate": "Navigate",
+        "docMeta": "Document meta",
+        "licenses": "Licenses"
+      },
+      "debug": { "title": "Debug JSON" }
+    },
+    "licenseEditor": {
+      "fields": {
+        "licenseId": "licenseId",
+        "name": "name",
+        "text": "text"
+      },
+      "placeholders": {
+        "licenseId": "Sample: MIT",
+        "name": "Sample: The MIT License",
+        "text": "Full license text",
+        "copyright": "(c) 2024 Example Authors"
+      },
+      "labels": {
+        "copyrights": "License-level Copyrights"
+      },
+      "buttons": {
+        "remove": "Remove license"
+      }
+    }
+  }
+}
