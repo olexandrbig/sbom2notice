@@ -1,0 +1,29 @@
+name: Scan and upload to trustsource.io
+
+on:
+  push:
+    tags:
+      - '*.*.*'
+
+jobs:
+  scan:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        include:
+          - node-version: 20.x
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install dependencies
+        run: pnpm install
+      - name: Scan dependencies
+        run: npx ts-node-client --branch main --tag $GITHUB_REF_NAME --project Tools --url https://api.trustsource.io/ --apiKey ${{ secrets.TS_TOKEN }}
+
