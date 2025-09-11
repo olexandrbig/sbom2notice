@@ -1,3 +1,5 @@
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/TrustSource/ts-scan/badge)](https://scorecard.dev/viewer/?uri=github.com/TrustSource/ts-scan) ![License](https://img.shields.io/badge/License-AGPL-3.0-green)
+
 # sbom2notice
 
 Local-first tool for developers and compliance managers to **convert SBOMs (SPDX / CycloneDX)** into structured `NOTICE` files.
