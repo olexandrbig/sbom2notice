@@ -144,7 +144,7 @@ export default function NoticeList() {
       };
       const id = globalThis.crypto?.randomUUID?.() ?? Date.now().toString();
       saveNotice(id, enriched);
-      router.push(`/notice/${id}`);
+      router.push(`/notice?id=${encodeURIComponent(id)}`);
     } catch (e) {
       console.error("Conversion failed", e);
       alert(t("components.noticeList.alerts.convertFailed"));
@@ -215,7 +215,7 @@ export default function NoticeList() {
               <td className="px-4 py-3">{doc.licenses.length}</td>
               <td className="px-4 py-3">
                 <div className="flex justify-end gap-2">
-                  <Link href={`/notice/${id}`} className="inline-flex items-center gap-1 rounded-md border px-3 py-1.5 hover:bg-accent hover:text-accent-foreground">
+                  <Link href={{ pathname: "/notice", query: { id } }} className="inline-flex items-center gap-1 rounded-md border px-3 py-1.5 hover:bg-accent hover:text-accent-foreground">
                     <ExternalLink className="size-4" />
                     {t("components.noticeList.buttons.open")}
                   </Link>

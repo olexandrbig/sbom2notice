@@ -1,6 +1,8 @@
-import NoticeList from "@/components/noticeList";
+// app/notice/page.tsx
+import type { Metadata } from "next";
+import NoticePageClient from "@/components/noticePageClient";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Notice Files",
   description: "Your local Notice Files",
 };
@@ -8,7 +10,7 @@ export const metadata = {
 export default function Page() {
   return (
     <main className="container min-h-[calc(100vh-200px)] mx-auto py-10">
-      <NoticeList />
+      <NoticePageClient />
     </main>
   );
 }

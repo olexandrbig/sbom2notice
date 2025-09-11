@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import type { Route } from "next";
 import UploadSbom from "@/components/uploadSbom";
 import { sbomToNotice } from "@/utils/sbomToNotice";
 import { saveNotice } from "@/utils/storage";
@@ -66,7 +67,7 @@ export default function Landing() {
                     };
                     const id = (globalThis.crypto?.randomUUID?.() ?? Date.now().toString());
                     saveNotice(id, enriched);
-                    router.push(`/notice/${id}`);
+                    router.push(`/notice/?id=${encodeURIComponent(id)}` as Route);
                   } catch (e) {
                     console.error("Conversion failed", e);
                     alert(t("components.noticeList.alerts.convertFailed"));
