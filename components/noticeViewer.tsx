@@ -39,7 +39,11 @@ export default function NoticeViewer({ id }: { id: string }) {
       setDoc(loaded);
       const elapsed = performance.now() - start;
       const finish = () => setState(loaded ? "ready" : "missing");
-      elapsed < MIN_DELAY ? window.setTimeout(finish, MIN_DELAY - elapsed) : finish();
+      if (elapsed < MIN_DELAY) {
+        window.setTimeout(finish, MIN_DELAY - elapsed);
+      } else {
+        finish();
+      }
     };
 
     queueMicrotask(run);

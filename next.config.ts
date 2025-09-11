@@ -46,12 +46,14 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   reactStrictMode: true,
   typedRoutes: true,
-  headers: async () => [
-    {
-      source: "/(.*)",
-      headers: securityHeaders
+  ...(isPages ? {} : {
+    async headers(){
+      return [{
+        source: "/(.*)",
+        headers: securityHeaders
+      }]
     }
-  ]
+  }),
 };
 
 export default nextConfig;

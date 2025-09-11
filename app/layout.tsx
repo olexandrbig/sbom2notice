@@ -4,7 +4,7 @@ import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 
 export const metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://example.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL),
   title: {
     default: "SBOM to NOTICE Converter",
     template: "%s | SBOM to NOTICE"
