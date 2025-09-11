@@ -46,6 +46,9 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   reactStrictMode: true,
   typedRoutes: true,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isPages ? `/${repo}` : "",
+  },
   ...(isPages ? {} : {
     async headers(){
       return [{
