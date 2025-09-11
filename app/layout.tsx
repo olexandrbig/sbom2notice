@@ -6,7 +6,7 @@ import {Metadata} from "next";
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://trustsource.github.io/sbom2notice/");
 
 const BP = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
