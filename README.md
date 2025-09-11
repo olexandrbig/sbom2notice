@@ -1,4 +1,4 @@
-[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/TrustSource/ts-scan/badge)](https://scorecard.dev/viewer/?uri=github.com/TrustSource/ts-scan) ![License](https://img.shields.io/badge/License-AGPL-3.0-green)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/TrustSource/sbom2notice/badge)](https://scorecard.dev/viewer/?uri=github.com/TrustSource/sbom2notice) ![License](https://img.shields.io/badge/License-AGPL%203.0-green)
 
 # sbom2notice
 
