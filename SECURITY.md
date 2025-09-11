@@ -1,27 +1,27 @@
-#Contact information
+# Contact information
 Contact: mailto:support@trustsource.io
 Contact: https://www.trustsource.io/contact-security
 
-#expiry
+# Expiry
 Expires: 2026-01-10T20:00:00.000Z
 
-#Our OpenPGP key
+# Our OpenPGP key
 Encryption: https://www.trustsource.io/security-policy
 
-#location where we attest our supporter's success
+# Location where we attest our supporter's success
 Acknowledgments: https://www.trustsource.io/hall-of-fame
 
-#languages
+# Languages
 Preferred-Languages: en, de
 
-#self reference
+# Self reference
 Canonical: https://raw.githubusercontent.com/TrustSource/sbom2notice/refs/heads/main/SECURITY.txt
 
-#our security policy
+# Our security policy
 Policy: https://www.trustsource.io/security-policy
 
-#our Security Job Openings
+# Our Security Job Openings
 Hiring: https://www.trustsource.io/security-jobs
 
-#CSAF links
+# CSAF links
 CSAF: https://p-csaf.dev.trustsource.io/.well-known/csaf/provider-metadata.json
