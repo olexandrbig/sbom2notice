@@ -12,6 +12,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Check } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import logo from "@/public/logo.png";
 
 export default function Navigation() {
   const { t, i18n } = useTranslation("common");
@@ -33,7 +34,7 @@ export default function Navigation() {
           className="text-sm font-semibold tracking-tight"
         >
           <Image
-            src="/logo.png"
+            src={logo}
             alt={t("branding.logoAlt")}
             width={70}
             height={32}
@@ -41,7 +42,7 @@ export default function Navigation() {
             className="inline-block dark:hidden h-8 w-auto mr-1"
           />
           <Image
-            src="/logo.png"
+            src={logo}
             alt={t("branding.logoAlt")}
             width={70}
             height={32}
