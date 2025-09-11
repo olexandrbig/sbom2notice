@@ -21,6 +21,7 @@ export default function PrivacyContent() {
         <a
           className="underline underline-offset-4 ml-2"
           href="mailto:support@trustsource.io"
+          target={"_blank"}
         >
           {t("pages.privacy.contact")}
         </a>

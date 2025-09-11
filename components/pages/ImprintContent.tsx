@@ -29,6 +29,7 @@ export default function ImprintContent() {
         <a
           className="underline underline-offset-4"
           href="https://support.trustsource.io"
+          target={"_blank"}
         >
           {t("pages.imprint.kb")}
         </a>
@@ -36,6 +37,7 @@ export default function ImprintContent() {
         <a
           className="underline underline-offset-4"
           href="mailto:support@trustsource.io"
+          target={"_blank"}
         >
           {t("pages.imprint.contact")}
         </a>
@@ -49,6 +51,7 @@ export default function ImprintContent() {
         <a
           className="underline underline-offset-4"
           href="https://www.trustsource.io/en/security-policy"
+          target={"_blank"}
         >
           {t("pages.imprint.policy")}
         </a>
@@ -56,6 +59,7 @@ export default function ImprintContent() {
         <a
           className="underline underline-offset-4"
           href="mailto:psirt@trustsource.io"
+          target={"_blank"}
         >
           {t("pages.imprint.contact")}
         </a>

@@ -1,10 +1,12 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import type { Route } from "next";
 import UploadSbom from "@/components/uploadSbom";
 import { sbomToNotice } from "@/utils/sbomToNotice";
 import { saveNotice } from "@/utils/storage";
 import { useTranslation } from "react-i18next";
+import Link from "next/link";
 
 export default function Landing() {
   const { t } = useTranslation("common");
@@ -66,7 +68,7 @@ export default function Landing() {
                     };
                     const id = (globalThis.crypto?.randomUUID?.() ?? Date.now().toString());
                     saveNotice(id, enriched);
-                    router.push(`/notice/${id}`);
+                    router.push(`/notice/?id=${encodeURIComponent(id)}` as Route);
                   } catch (e) {
                     console.error("Conversion failed", e);
                     alert(t("components.noticeList.alerts.convertFailed"));
@@ -96,18 +98,18 @@ export default function Landing() {
               <div className="rounded-lg border p-3">
                 <div className="font-medium">{t("landing.cards.compliance.title")}</div>
                 <div className="flex flex-wrap gap-4 pt-1 text-xs">
-                  <a
+                  <Link
                     className="underline underline-offset-4"
-                    href="/privacy"
+                    href={{ pathname: "/privacy" }}
                   >
                     {t("nav.privacy")}
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     className="underline underline-offset-4"
-                    href="/imprint"
+                    href={{ pathname: "/imprint" }}
                   >
                     {t("nav.imprint")}
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="rounded-lg border p-3">

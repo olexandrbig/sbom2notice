@@ -8,6 +8,10 @@ Local-first tool for developers and compliance managers to **convert SBOMs (SPDX
 - Edit gaps via a built-in **Form Builder** with progress tracking.
 - Save drafts locally, reopen anytime, download final NOTICE.
 
+## 🚀 Live Demo
+
+**GitHub Pages:** https://trustsource.github.io/sbom2notice/
+
 ## Tech Stack
 - [Next.js 15 (App Router)](https://nextjs.org/)
 - [React 19](https://react.dev/)

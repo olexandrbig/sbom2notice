@@ -3,8 +3,12 @@ import I18nProvider from "@/i18n/I18nProvider";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+
 export const metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://example.com"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "SBOM to NOTICE Converter",
     template: "%s | SBOM to NOTICE"

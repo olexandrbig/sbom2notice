@@ -12,6 +12,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Check } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import logo from "@/public/logo.png";
 
 export default function Navigation() {
   const { t, i18n } = useTranslation("common");
@@ -28,12 +29,12 @@ export default function Navigation() {
     <header className="w-full">
       <div className="container mx-auto flex h-14 items-center justify-between">
         <Link
-          href="/"
+          href={{ pathname: "/" }}
           aria-label={t("app.name")}
           className="text-sm font-semibold tracking-tight"
         >
           <Image
-            src="/logo.png"
+            src={logo}
             alt={t("branding.logoAlt")}
             width={70}
             height={32}
@@ -41,7 +42,7 @@ export default function Navigation() {
             className="inline-block dark:hidden h-8 w-auto mr-1"
           />
           <Image
-            src="/logo.png"
+            src={logo}
             alt={t("branding.logoAlt")}
             width={70}
             height={32}
@@ -54,8 +55,10 @@ export default function Navigation() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuLink href="/notice">
-                  {t("nav.notice")}
+                <NavigationMenuLink asChild href="/notice">
+                  <Link href={{ pathname: "/notice" }}>
+                    {t("nav.notice")}
+                  </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>

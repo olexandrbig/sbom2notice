@@ -35,16 +35,25 @@ const securityHeaders = [
     ].join("; ")
   }
 ];
+const isPages = process.env.GITHUB_PAGES === "true";
+const repo = "sbom2notice";
 
 const nextConfig: NextConfig = {
+  output: 'export',
+  basePath: isPages ? `/${repo}` : undefined,
+  assetPrefix: isPages ? `/${repo}/` : undefined,
+  images: { unoptimized: true },
+  trailingSlash: true,
   reactStrictMode: true,
   typedRoutes: true,
-  headers: async () => [
-    {
-      source: "/(.*)",
-      headers: securityHeaders
+  ...(isPages ? {} : {
+    async headers(){
+      return [{
+        source: "/(.*)",
+        headers: securityHeaders
+      }]
     }
-  ]
+  }),
 };
 
 export default nextConfig;

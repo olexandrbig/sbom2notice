@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { useTranslation } from "react-i18next";
+import Link from "next/link";
 
 function ExternalIconLink({
                             href,
@@ -57,19 +58,19 @@ export default function SiteFooter() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
               {siteConfig.links.privacy && (
-                <a href={siteConfig.links.privacy} className="text-muted-foreground hover:text-foreground">
+                <Link href={{ pathname: siteConfig.links.privacy }} className="text-muted-foreground hover:text-foreground">
                   {t("nav.privacy")}
-                </a>
+                </Link>
               )}
               {siteConfig.links.terms && (
-                <a href={siteConfig.links.terms} className="text-muted-foreground hover:text-foreground">
+                <Link href={{ pathname: siteConfig.links.terms }} className="text-muted-foreground hover:text-foreground">
                   {t("nav.terms")}
-                </a>
+                </Link>
               )}
               {siteConfig.links.imprint && (
-                <a href={siteConfig.links.imprint} className="text-muted-foreground hover:text-foreground">
+                <Link href={{ pathname: siteConfig.links.imprint }} className="text-muted-foreground hover:text-foreground">
                   {t("nav.legalImprint")}
-                </a>
+                </Link>
               )}
             </div>
 
