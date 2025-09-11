@@ -2,8 +2,8 @@ name: Scan and upload to trustsource.io
 
 on:
   push:
-    tags:
-      - '*.*.*'
+    branches:
+      - 'main'
 
 jobs:
   scan:
@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         include:
-          - node-version: 20.x
+          - node-version: 22.x
 
     steps:
       - uses: actions/checkout@v3
@@ -24,6 +24,10 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - name: Install dependencies
         run: pnpm install
+      - name: Get VERSION
+        id: get_version
+        run: |
+          echo VERSION=$(jq -r '.version' package.json) >> $GITHUB_OUTPUT
       - name: Scan dependencies
-        run: npx ts-node-client --branch main --tag $GITHUB_REF_NAME --project Tools --url https://api.trustsource.io/ --apiKey ${{ secrets.TS_TOKEN }}
+        run: npx ts-node-client --branch main --tag ${{ steps.get_version.outputs.VERSION }} --project Tools --url https://api.trustsource.io/ --apiKey ${{ secrets.TS_TOKEN }}
 
