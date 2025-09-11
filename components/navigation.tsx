@@ -28,7 +28,7 @@ export default function Navigation() {
     <header className="w-full">
       <div className="container mx-auto flex h-14 items-center justify-between">
         <Link
-          href="/"
+          href={{ pathname: "/" }}
           aria-label={t("app.name")}
           className="text-sm font-semibold tracking-tight"
         >
@@ -54,8 +54,10 @@ export default function Navigation() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuLink href="/notice">
-                  {t("nav.notice")}
+                <NavigationMenuLink asChild href="/notice">
+                  <Link href={{ pathname: "/notice" }}>
+                    {t("nav.notice")}
+                  </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
