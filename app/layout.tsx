@@ -17,13 +17,13 @@ export const metadata: Metadata = {
     template: "%s | SBOM to NOTICE"
   },
   description: "Convert SPDX/CycloneDX SBOMs to compliant NOTICE files.",
-  alternates: { canonical: new URL(SITE_URL) },
+  alternates: { canonical: `${BP}/` },
   openGraph: {
     type: "website",
-    url: new URL(SITE_URL),
-    title: "SBOM to NOTICE Converter",
+    url: `${BP}/`,
+    title: "SBOM to NOTICE",
     description: "Generate NOTICE files from SPDX/CycloneDX JSON.",
-    siteName: "NOTICE Builder",
+    siteName: "SBOM to NOTICE",
     images: [
       { url: `${BP}/logo.png`, width: 70, height: 30, alt: "SBOM to NOTICE" },
     ],
