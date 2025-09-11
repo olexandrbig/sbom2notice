@@ -10,8 +10,6 @@ const SITE_URL =
 
 const BP = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
-const abs = (p = "/") => `${SITE_URL}${BP}${p}`;
-
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -19,20 +17,20 @@ export const metadata: Metadata = {
     template: "%s | SBOM to NOTICE"
   },
   description: "Convert SPDX/CycloneDX SBOMs to compliant NOTICE files.",
-  alternates: { canonical: "/" },
+  alternates: { canonical: new URL(SITE_URL) },
   openGraph: {
     type: "website",
-    url: abs("/"),
+    url: new URL(SITE_URL),
     title: "SBOM to NOTICE Converter",
     description: "Generate NOTICE files from SPDX/CycloneDX JSON.",
     siteName: "NOTICE Builder",
     images: [
-      { url: abs("/logo.png"), width: 70, height: 30, alt: "SBOM to NOTICE" },
+      { url: `${BP}/logo.png`, width: 70, height: 30, alt: "SBOM to NOTICE" },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    images: [abs("/logo.png")],
+    images: [`${BP}/logo.png`],
   },
   robots: { index: true, follow: true },
   manifest: `${BP}/icons/manifest.json`,
