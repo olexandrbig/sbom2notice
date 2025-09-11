@@ -2,7 +2,6 @@ import "./globals.css";
 import I18nProvider from "@/i18n/I18nProvider";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
-import logo from "@/public/logo.png";
 import {Metadata} from "next";
 
 const SITE_URL =
@@ -28,12 +27,12 @@ export const metadata: Metadata = {
     description: "Generate NOTICE files from SPDX/CycloneDX JSON.",
     siteName: "NOTICE Builder",
     images: [
-      { url: abs("/og.png"), width: 70, height: 30, alt: "SBOM to NOTICE" },
+      { url: abs("/logo.png"), width: 70, height: 30, alt: "SBOM to NOTICE" },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    images: [abs("/og.png")],
+    images: [abs("/logo.png")],
   },
   robots: { index: true, follow: true },
   manifest: `${BP}/icons/manifest.json`,
