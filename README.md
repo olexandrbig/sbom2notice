@@ -2,6 +2,15 @@
 
 Local-first tool for developers and compliance managers to **convert SBOMs (SPDX / CycloneDX)** into structured `NOTICE` files.
 
+## 🚀 Live Demo
+
+**GitHub Pages:** https://TrustSource.github.io/sbom2notice/
+
+> If you forked the repo, replace `TrustSource` with your GitHub handle.  
+> The site is built with `output: "export"`, `basePath: "/sbom2notice"`, and `assetPrefix: "/sbom2notice/"`.
+
+[![Pages Deploy Status](https://github.com/TrustSource/sbom2notice/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/TrustSource/sbom2notice/actions/workflows/pages/pages-build-deployment)
+
 - Runs entirely **in your browser** — no uploads, no servers.
 - **GDPR-friendly by design** (suitable for EU/DE companies).
 - Drag & drop your SBOM JSON, validate it, and generate a NOTICE skeleton.
