@@ -1,20 +1,10 @@
 import Landing from "@/components/landing";
+import {Metadata} from "next";
 
-export const metadata = {
-  title: "SBOM to NOTICE | Local-first builder",
+export const metadata: Metadata = {
+  title: "SBOM to NOTICE",
   description:
-    "Generate and edit NOTICE files from your SBOM entirely in the browser. No uploads. GDPR-friendly by design.",
-  openGraph: {
-    title: "SBOM to NOTICE | Local-first builder",
-    description:
-      "Generate and edit NOTICE files from your SBOM entirely in the browser. No uploads. GDPR-friendly by design.",
-    url: "https://trustsource.io/",
-    siteName: "SBOM to NOTICE",
-    images: [],
-    locale: "en_US",
-    type: "website"
-  },
-  alternates: { canonical: "https://trustsource.io/" }
+    "Generate and edit NOTICE files from your SBOM entirely in the browser. No uploads. GDPR-friendly by design."
 };
 
 export default function Page() {
