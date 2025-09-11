@@ -1,0 +1,270 @@
+{
+  "app": {
+    "name": "SBOM to NOTICE",
+    "tagline": "NOTICE-Dateien schnell aus Ihrem SBOM erstellen"
+  },
+  "aria": {
+    "landing": "Startseite"
+  },
+  "nav": {
+    "notice": "NOTICE-Dateien",
+    "home": "Start",
+    "privacy": "Datenschutz",
+    "terms": "Nutzungsbedingungen",
+    "imprint": "Impressum",
+    "language": "Sprache",
+    "legalImprint": "Rechtliches / Impressum"
+  },
+  "landing": {
+    "headline": "Verwandeln Sie Ihr SBOM in eine NOTICE-Datei",
+    "subline": "Läuft in Ihrem Browser. Keine Uploads. DSGVO-sicher.",
+    "features": {
+      "import": "CycloneDX oder SPDX (JSON) öffnen",
+      "editable": "NOTICE-Entwurf mit einem einfachen Formular bearbeiten",
+      "nocookies": "Keine Cookies. Kein Tracking. Keine zusätzlichen Tools."
+    },
+    "cta": {
+      "upload": "SBOM hochladen",
+      "privacyByDesign": "Datenschutz-Info ansehen"
+    },
+    "note": "Entwürfe werden nur in Ihrem Browser gespeichert. Es wird nichts übertragen.",
+    "whyTitle": "Warum dieses Tool?",
+    "whyText": "Konvertieren Sie Ihr SBOM in ein strukturiertes NOTICE-Skelett und ergänzen Sie fehlende Felder sicher im Browser.",
+    "cards": {
+      "security": {
+        "title": "Sicherheit",
+        "text": "Offline nutzbar, keine Uploads, CSP-freundlich."
+      },
+      "compliance": {
+        "title": "Compliance"
+      },
+      "formats": {
+        "title": "Formate",
+        "text": "SPDX / CycloneDX (JSON), NOTICE-Export."
+      },
+      "editing": {
+        "title": "Bearbeitung",
+        "text": "Form-Builder, automatische Entwürfe, Live-Vorschau."
+      }
+    }
+  },
+  "pages": {
+    "privacy": {
+      "title": "Datenschutzerklärung",
+      "intro": "Alles bleibt auf Ihrem Rechner. Wir laden weder Ihr SBOM noch NOTICE-Dateien hoch oder speichern sie.",
+      "nocookies": "Keine Cookies, kein Tracing, kein Tracking. Ihre Nutzung bleibt privat.",
+      "questions": "Fragen?",
+      "contact": "Kontakt"
+    },
+    "terms": {
+      "title": "Nutzungsbedingungen",
+      "intro": "Dieses Tool ist kostenlos und ohne Gewähr. Lizenz: AGPL 3.0.",
+      "usage": "Es hilft beim Erstellen von NOTICE-Dateien aus SBOM-Daten. Für die Ergebnisse sind Sie verantwortlich.",
+      "changes": "Diese Bedingungen können sich ändern. Neue Versionen erscheinen hier."
+    },
+    "imprint": {
+      "title": "Impressum",
+      "operator": "Entwickler des Tools:",
+      "company": "EACG Operation Services GmbH",
+      "address": "Taunustor 1, 60310 Frankfurt am Main, Deutschland",
+      "support": "Support:",
+      "kb": "Wissensdatenbank",
+      "contact": "Kontakt",
+      "security": "Sicherheit:",
+      "policy": "Richtlinie"
+    }
+  },
+  "lang": {
+    "enLong": "EN — Englisch",
+    "deLong": "DE — Deutsch"
+  },
+  "branding": {
+    "logoAlt": "TrustSource"
+  },
+  "actions": {
+    "export": {
+      "label": "Export",
+      "menuAria": "Exportmenü",
+      "json": "JSON",
+      "csv": "CSV",
+      "markdown": "Markdown"
+    }
+  },
+  "components": {
+    "consentBanner": {
+      "message": "Wir verwenden nur Cookies, die für den Betrieb der Anwendung erforderlich sind. Anonyme Analysen erlauben?",
+      "reject": "Ablehnen",
+      "allow": "Zulassen"
+    },
+    "arrayField": {
+      "removeItem": "Element entfernen",
+      "remove": "Entfernen",
+      "addItem": "Element hinzufügen"
+    },
+    "componentEditor": {
+      "component": "Komponente",
+      "componentWithIndex": "Komponente #{{index}}",
+      "remove": "Entfernen",
+      "fields": {
+        "name": "Name",
+        "version": "Version",
+        "purl": "PURL",
+        "homepage": "Homepage",
+        "copyrights": "Urheberrechtshinweise",
+        "sources": "Quellen",
+        "modifiedSources": "Geänderte Quellen",
+        "modifications": "Änderungen (kurze Notizen)",
+        "modificationsText": "Änderungsbeschreibung"
+      },
+      "placeholders": {
+        "name": "package-name",
+        "version": "1.2.3",
+        "purl": "pkg:npm/name@1.0.0",
+        "homepage": "https://example.com",
+        "copyright": "(c) 2024 Beispiel-Autoren",
+        "source": "https://repo/url",
+        "modifiedSource": "https://patch/url",
+        "modification": "Sicherheitsfix angewendet …",
+        "modificationsText": "Ausführliche Beschreibung der Änderungen…"
+      }
+    },
+    "footer": {
+      "aria": {
+        "github": "GitHub",
+        "linkedin": "LinkedIn",
+        "email": "E-Mail"
+      },
+      "copyright": "© {{year}} {{name}}. Alle Rechte vorbehalten."
+    },
+    "uploadSbom": {
+      "title": "SBOM hochladen (CycloneDX/SPDX JSON)",
+      "subtitle": "Ziehen Sie Ihre Datei hierher oder verwenden Sie den Button.",
+      "dropAria": "SBOM-Datei hier ablegen",
+      "chooseAria": "SBOM-Datei auswählen",
+      "button": "SBOM hochladen",
+      "errors": {
+        "tooLarge": "Datei ist zu groß. Maximal {{maxMB}} MB.",
+        "invalidJson": "Datei ist kein gültiges JSON.",
+        "unexpected": "Unerwarteter Fehler beim Lesen der Datei.",
+        "invalidType": "Nicht unterstützter Dateityp. Bitte CycloneDX/SPDX JSON hochladen.",
+        "rejectGeneric": "Datei konnte nicht akzeptiert werden. Bitte versuchen Sie ein anderes SBOM-JSON."
+      }
+    },
+    "noticeViewer": {
+      "missing": {
+        "title": "NOTICE nicht gefunden",
+        "descBeforeId": "Wir konnten keine NOTICE mit der ID",
+        "descAfterId": "in Ihrem Browser-Speicher finden. Sie wurde eventuell gelöscht.",
+        "goHome": "Zur Startseite"
+      },
+      "header": {
+        "titleFallback": "NOTICE JSON",
+        "subtitle": "Lokaler Entwurf · {{percent}}% abgeschlossen",
+        "sourceSuffix": " · {{fileName}}"
+      },
+      "buttons": {
+        "download": {
+          "aria": "JSON herunterladen",
+          "idle": "JSON herunterladen",
+          "done": "Gespeichert"
+        },
+        "copy": {
+          "aria": "JSON kopieren",
+          "idle": "In die Zwischenablage kopieren",
+          "done": "Kopiert"
+        }
+      }
+    },
+    "noticeList": {
+      "header": {
+        "title": "Ihre lokalen NOTICE-Entwürfe"
+      },
+      "empty": {
+        "title": "Noch keine lokalen NOTICEs",
+        "hint": "Laden Sie hier ein SBOM hoch, um Ihren ersten NOTICE-Entwurf zu erstellen."
+      },
+      "table": {
+        "name": "Name",
+        "id": "ID",
+        "completed": "Abgeschlossen",
+        "licenses": "Lizenzen",
+        "actions": "Aktionen"
+      },
+      "row": {
+        "untitled": "(unbenannt)",
+        "completedCell": "{{percent}}% ({{count}} Komponenten)"
+      },
+      "buttons": {
+        "open": "Öffnen",
+        "download": "Herunterladen",
+        "delete": "Löschen"
+      },
+      "confirmDelete": "Diese lokale NOTICE löschen? Dies kann nicht rückgängig gemacht werden.",
+      "alerts": {
+        "convertFailed": "Konvertierung von SBOM zu NOTICE fehlgeschlagen. Details in der Konsole."
+      }
+    },
+    "noticeEditor": {
+      "header": { "titleFallback": "NOTICE" },
+      "buttons": {
+        "save": { "aria": "Speichern", "idle": "Speichern", "done": "Gespeichert" }
+      },
+      "controls": {
+        "collapseAll": "Alle einklappen",
+        "openAll": "Alle öffnen"
+      },
+      "doc": {
+        "sectionTitle": "Dokument",
+        "fields": {
+          "name": "Name",
+          "versionSchema": "Version (Schema)",
+          "writtenOffer": "Schriftliches Angebot"
+        },
+        "placeholders": {
+          "name": "Mein-Projekt NOTICE",
+          "version": "1.0.0",
+          "writtenOffer": "(Optional) Angebot zur Bereitstellung des Quellcodes ..."
+        },
+        "completedDerivedLabel": "Abgeschlossen (abgeleitet):"
+      },
+      "licenses": {
+        "title": "Lizenzen",
+        "add": "Lizenz hinzufügen",
+        "paramsTitle": "Lizenzparameter",
+        "status": { "complete": "Vollständig", "incomplete": "Unvollständig" }
+      },
+      "components": {
+        "label": "Komponente:",
+        "unnamed": "(unbenannt)"
+      },
+      "aside": {
+        "progressTitle": "Fortschritt",
+        "componentsComplete": "Komponenten abgeschlossen",
+        "licensesComplete": "Lizenzen abgeschlossen",
+        "navigate": "Navigieren",
+        "docMeta": "Dokument-Metadaten",
+        "licenses": "Lizenzen"
+      },
+      "debug": { "title": "Debug-JSON" }
+    },
+    "licenseEditor": {
+      "fields": {
+        "licenseId": "Lizenz-ID",
+        "name": "Name",
+        "text": "Text"
+      },
+      "placeholders": {
+        "licenseId": "Beispiel: MIT",
+        "name": "Beispiel: The MIT License",
+        "text": "Vollständiger Lizenztext",
+        "copyright": "(c) 2024 Beispiel-Autoren"
+      },
+      "labels": {
+        "copyrights": "Urheberrechtshinweise auf Lizenzebene"
+      },
+      "buttons": {
+        "remove": "Lizenz entfernen"
+      }
+    }
+  }
+}
