@@ -2,8 +2,8 @@ name: Scan and upload to trustsource.io
 
 on:
   push:
-    tags:
-      - '*.*.*'
+    branches:
+      - 'main'
 
 jobs:
   scan:
@@ -13,17 +13,25 @@ jobs:
     strategy:
       matrix:
         include:
-          - node-version: 20.x
+          - node-version: 22.x
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           registry-url: 'https://registry.npmjs.org'
+      - name: Enable Corepack & pin pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@9.15.9 --activate
+          pnpm -v
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
+      - name: Get VERSION
+        id: get_version
+        run: |
+          echo VERSION=$(jq -r '.version' package.json) >> $GITHUB_OUTPUT
       - name: Scan dependencies
-        run: npx ts-node-client --branch main --tag $GITHUB_REF_NAME --project Tools --url https://api.trustsource.io/ --apiKey ${{ secrets.TS_TOKEN }}
+        run: npx ts-node-client --branch main --tag ${{ steps.get_version.outputs.VERSION }} --project Tools --url https://api.trustsource.io/ --apiKey ${{ secrets.TS_TOKEN }}
 
