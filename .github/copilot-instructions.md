@@ -6,7 +6,7 @@ This project is a web application that allows users to assemble notice files bas
 
 - React and Tailwind CSS for the frontend.
 - Node.js and Express for the backend.
-- MongoDB for data storage.
+- local browser for data storage.
 
 ## Coding Standards
 
