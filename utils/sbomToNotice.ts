@@ -1,5 +1,14 @@
 import type { NoticeDoc, LicenseBlock, NoticeComponent } from "@/types/notice";
 
+type KnownSpdx = { name?: string; licenseText?: string };
+let SPDX_FULL: Record<string, KnownSpdx> = {};
+try {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  SPDX_FULL = require("spdx-license-list/full");
+} catch {
+  SPDX_FULL = {};
+}
+
 const norm = (s?: string | null) => (typeof s === "string" ? s.trim() : "");
 const uniq = <T,>(arr: T[]) => Array.from(new Set(arr.filter(Boolean))) as T[];
 const asArray = <T,>(x: T | T[] | undefined | null): T[] =>
@@ -63,10 +72,11 @@ function getLicenseBlocksFromCycloneDxComponentLicenses(licenses: any[]): { id?:
   (licenses || []).forEach((entry: any) => {
     const l = entry?.license;
     if (l) {
+      const hit = SPDX_FULL[norm(l.id)];
       out.push({
         id: norm(l.id),
-        name: norm(l.name),
-        text: l?.text?.content ? String(l.text.content) : undefined,
+        name: norm(l.name) ? norm(l.name) : hit && hit.name ? hit.name : undefined,
+        text: l?.text?.content ? String(l.text.content) : hit && hit.licenseText ? hit.licenseText : undefined,
       });
     } else if (entry?.expression) {
       out.push({ name: norm(entry.expression) });
@@ -105,10 +115,13 @@ export function convertSpdxToNotice(spdx: any, opts?: { schemaVersion?: string }
     const licKey = (licenseId || "UNKNOWN").toUpperCase();
     if (!licenseId) unknown.push({ name, version: component.version, purl: component.purl });
 
+    const hit = SPDX_FULL[licKey];
     const lb =
       byLicenseId.get(licKey) ||
       {
         licenseId: licKey,
+        name: hit && hit.name ? hit.name : undefined,
+        text: hit && hit.licenseText ? hit.licenseText : undefined,
         components: [],
       };
 
