@@ -4,7 +4,7 @@ export function isComponentComplete(c: NoticeComponent): boolean {
   return !!c?.name && (!!c?.version || !!c?.purl);
 }
 export function isLicenseComplete(l: LicenseBlock): boolean {
-  const licOk = !!l?.licenseId && (!!l?.name || !!l?.text);
+  const licOk = !!l?.licenseId && !!l?.name && !!l?.text;
   const compsOk = (l?.components ?? []).every(isComponentComplete);
   return licOk && compsOk;
 }
